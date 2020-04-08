@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<meta charset="UTF -8">
+<meta name ="viewport" content="width=device-width, initial-scale=1.0">
+<title>document</title>
+</head>
+
+
+
+
+<body>
+
+
+<script>
+
+// -----------Array Question -----------------
+// ------------ paragraph a ------------------
+var arr = [] ;
+
+arr[0] = prompt("Enter the first number");
+arr[1] = prompt("Enter the second number");
+arr[2] = prompt("Enter the third number ");
+arr[3] = prompt("Enter the forth number");
+arr[4] = prompt("Enter the fifth number ");
+arr[5] = prompt("Enter the sixth number");
+
+arr[0] = Number(arr[0]);
+arr[1] = Number(arr[1]);
+arr[2] = Number(arr[2]);
+arr[3] = Number(arr[3]);
+arr[4] = Number(arr[4]);
+arr[5] = Number(arr[5]);
+
+
+console.log("Num0: ",arr[0],typeof(arr[0])); 
+console.log("Num1: ",arr[1],typeof(arr[1]));
+console.log("Num2: ",arr[2],typeof(arr[2]));
+console.log("Num3: ",arr[3],typeof(arr[3]));
+console.log("Num4: ",arr[4],typeof(arr[4]));
+console.log("Num5: ",arr[5],typeof(arr[5]));
+
+
+
+
+// ------------ paragraph b------------------
+
+
+
+
+    var maxValue = arr[0] ;
+    var minValue = arr[0] ;
+
+   
+
+for (var counter=1 ;counter<arr.length ;counter++){
+    if(arr[counter]>maxValue) {
+        maxValue=arr[counter];
+    }
+
+}
+
+
+    console.log(` index :${counter} contains: ${maxValue} which is the maximal number in Array`);
+   
+
+for (var counter=1 ;counter<arr.length ;counter++){
+    if(arr[counter]<minValue) {
+        minValue=arr[counter];
+    }
+}
+
+    
+    
+    console.log(` index :${counter} contains: ${minValue} which is the minimal number in Array`);
+
+
+    // ------------ paragraph c------------------    
+
+    var sum = 0 ;
+
+    for (var counter=0 ;counter<arr.length ;counter++){
+        sum += arr[counter];
+    }
+
+    console.log(` the sum after : ${counter} index count is : ${sum} `);
+
+    
+
+    // ------------ paragraph d------------------ 
+
+    var arr1 =[];
+    var arr2 =[];
+
+    for(counter = 0 ; counter<arr.length ; counter++ ) {
+        if(arr[counter]%2==0)
+            arr1[counter]==arr[counter];
+        else
+            arr2[counter]==arr[counter];
+
+    }
+
+    // ------------ paragraph e------------------ 
+
+    var second_Max = arr[1] ;
+
+    for (counter=1 ; counter<arr.length ; counter++){
+        if(arr[counter]<maxValue && arr[counter]>second_Max)
+            second_Max=arr[counter] ;
+    }
+
+    console.log(` The second largest number is : ${second_Max} which is the second Largest  number in Array`);
+
+
+
+    // --------- Matrix Question -------------//
+
+
+        
+
+        var matrix = [
+            ["0","0"],
+            ["0","0"],
+            ["0","0"],
+            ["0","0"]
+        ];
+
+        
+        matrix[0][0]="true";
+        matrix[0][1]="true";
+        matrix[1][0]="true";
+        matrix[1][1]="false";
+        matrix[2][0]="false";
+        matrix[2][1]="true";
+        matrix[3][0]="false";
+        matrix[3][1]="false";
+
+        var answer = "true" ;
+
+
+
+        for(var row=0;row<matrix.length;row++){
+
+            //true/false  checking for logical or statement
+            for(var coloumn=0;coloumn<matrix[row].length-1;coloumn++){
+                if(matrix[row][coloumn]=="false" || matrix[row][coloumn+1]=="false")
+                    answer = "false" ;
+                else
+                    answer= "true" ;
+            }
+            console.log(`${answer}`);
+        }
+
+            //true/false checking for logical and statement
+
+        for(var row=0;row<matrix.length;row++){
+
+            
+            for(var coloumn=0;coloumn<matrix[row].length-1;coloumn++){
+                if(matrix[row][coloumn]=="true" && matrix[row][coloumn+1]=="true")
+                    answer = "true" ;
+                else
+                    answer= "false" ;
+            }
+            console.log(`${answer}`);
+        }
+
+            //true/false checking for logical xor statement 
+
+        for(var row=0;row<matrix.length;row++){
+
+            
+            for(var coloumn=0;coloumn<matrix[row].length-1;coloumn++){
+                if((matrix[row][coloumn]=="true" && matrix[row][coloumn+1]=="true")||(matrix[row][coloumn]=="false" && matrix[row][coloumn+1]=="false"))
+                    answer = "false" ;
+                else
+                    answer= "true" ;
+            }
+            console.log(`${answer}`);
+        }
+        
+
+        
+
+
+
+        
+
+
+ </script>
+
+
+
+ </body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
