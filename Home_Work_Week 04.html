@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang = "en" >
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+</head>
+
+
+<body>
+
+<script>
+
+
+// ------------- Home_Work_Week_04_Java_Script -------------------------
+// ------------- Exercise Number 01 The Reversed Number exercise -------
+
+
+
+
+function Reversed_number(num){ 
+    
+    var temp = 0 ;
+   
+    
+    
+    while (num != 0){
+
+       temp = temp*10 + num%10 ;
+       num = Math.floor( num /10 ) ;
+
+    }
+
+
+  return temp;
+
+
+    
+
+}
+
+var num1 = prompt("choose a number : ");    
+
+num1 = Number(num1); 
+
+var  res = Reversed_number(num1) ;
+
+
+console.log( `The Reverse number of this num is =   ${res}`) ; 
+
+ 
+
+
+
+// ------------- Exercise Number 02 isPrime Number exercise -------
+
+
+function  isPrime (num){
+
+  for(var j=2; j<=Math.sqrt(num);j++){
+    var div = num%j;
+      if (div == 0)
+       return 0 ;
+      
+  }
+
+  return 1 ; 
+
+}
+
+
+
+var num = prompt("choose a number : "); 
+
+ num = Number(num);
+var res = isPrime(num);
+
+if (res) // if res not equals to zero 
+console.log(`The number ${num} is a primary number`);
+
+else
+  console.log(`The number ${num} is not a primary number`);
+
+
+
+
+
+// ------------- Exercise Number 03 typeOff exercise  -------
+
+function GetArgumentAndReturnItsType(p){
+    return typeof(p)
+}
+
+
+
+
+console.log(GetArgumentAndReturnItsType(2));
+console.log(GetArgumentAndReturnItsType("Bob"));
+console.log(GetArgumentAndReturnItsType(true));
+console.log(GetArgumentAndReturnItsType(undefined));
+console.log(GetArgumentAndReturnItsType([1,2,3]));
+console.log(GetArgumentAndReturnItsType(func));
+
+function func(){
+    console.log("I am func") ;
+}
+
+
+// ------------- Exercise Number 04 converting from Dollars to Shekels ,Shekels to Dollars and The Same to Euros and opposite -------
+
+
+function dollar_to_shekel(num) { 
+  return num*3.58 ;
+}
+
+function shekel_to_dollar(num) { 
+  return num/3.58 ;
+}
+
+function euro_to_Shekel(num) { 
+  return num*3.90 ;
+}
+
+function shekel_to_euro(num) { 
+  return num/3.90 ;
+}
+
+
+
+var num1 = prompt("choose a number");
+num1 = Number(num1) ;
+
+res1 = dollar_to_shekel(num1);
+
+console.log(`the amount of ${num1} in dollars will be equal to ${res1} in shekels`);
+
+var num2 = prompt("choose a number");
+num2 = Number(num2) ;
+
+res2 =shekel_to_dollar(num2) ;
+
+console.log(`the amount of ${num2} in shekels will be equal to ${res2} in dollars`);
+
+
+var num3 = prompt("choose a number");
+num3 = Number(num3) ;
+
+res3 = euro_to_Shekel(num3);
+
+
+console.log(`the amount of ${num3} in euros will be equal to ${res3} in shekels`);
+
+var num4 = prompt("choose a number");
+num4 = Number(num4) ;
+
+res4 = shekel_to_euro(num4);
+
+console.log(`the amount of ${num4} in shekels will be equal to ${res4} in euros`);
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>
