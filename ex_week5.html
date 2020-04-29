@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+
+<script>
+
+// setTimeout exercise number 01 --------------
+/*
+var sec = prompt("enter the number of second please: ");
+
+var counter = Number(prompt("now enter the number of loop iterrations"));
+
+
+var rand ;
+
+
+for (var i=0;i<counter;i++){
+
+    setTimeout(
+
+        function(){
+            rand = Math.random()*10;
+            console.log(`The next random Number is ${rand}`);
+
+        },sec*1000 
+        
+     );
+
+}
+ 
+
+// setTimeout exercise number 02 ------------------
+
+var ms =4000 ;
+
+var counter = 0 ;
+
+var Array_names = ["Jhon","Alice","Paul"];
+
+ 
+
+    
+
+    for(var i=0;i<Array_names.length;i++){ 
+
+        setTimeout(
+            function(){
+                console.log(`the next value in the  array is: ${Array_names[counter++]}`);
+            }
+            ,ms*i)
+    }
+
+    
+
+        
+//  exercise number 03 (sqrt) --------------------------
+
+
+var number = Number(prompt("please enter any number you want"));
+
+var sqrt = Sqrt(number) 
+
+alert("the root of the number we get is:" + sqrt);
+
+
+function Sqrt(number){
+    return Math.sqrt(number);
+
+}
+
+
+
+// exercise number 04 (power) ----------------------------
+function power(number1,number2) {
+
+    return Math.pow(number1,number2);
+}
+
+
+
+var num1 = Number(prompt("enter the base number please"));
+
+var num2 = Number(prompt("enter the power number please"));
+
+
+var hezka = power(num1,num2);
+
+alert("The result of the Power between to numbers is:  " + hezka);
+
+
+
+
+// exercise number 05 (Titanium lirics song + using slice function ) ---------------------
+
+*/
+
+
+
+var  songLyrics =`              
+You shout it out
+But I can't hear a word you say
+I'm talking loud not saying much
+I'm criticized but all your bullets ricochet
+You shoot me down, but I get up
+I'm bulletproof nothing to lose
+Fire away, fire away
+Ricochet, you take your aim
+Fire away, fire away
+You shoot me down but I won't fall, I am titanium
+You shoot me down but I won't fall
+I am titanium, I am titanium, I am titanium, I am titanium
+Cut me down
+But it's you who has further to fall
+Ghost town, haunted love
+Raise your voice, sticks and stones may break my bones
+I'm talking loud not saying much
+I'm bulletproof nothing to lose
+Fire away, fire away
+Ricochet, you take your aim
+Fire away, fire away
+You shoot me down but I won't fall
+I am titanium
+You shoot me down but I won't fall
+I am titanium, I am titanium
+Stone-hard, machine gun
+Firing at the ones who run
+Stone-hard, thus bulletproof glass
+You shoot me down but I won't fall, I am titanium
+You shoot me down but I won't fall, I am titanium
+You shoot me down but I won't fall, I am titanium
+You shoot me down but I won't fall, I am titanium
+I am titanium
+`
+
+var nameOfSong = `Titanium`.toLocaleLowerCase();
+
+var First_Apparence_Of_Index = getFirstApparence(songLyrics,nameOfSong.toLowerCase());
+
+console.log(First_Apparence_Of_Index); // printing the LowerCase of The song name
+
+
+
+
+function getFirstApparence(songLyrics,nameOfSong){
+
+    return songLyrics.toString().indexOf(nameOfSong);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
