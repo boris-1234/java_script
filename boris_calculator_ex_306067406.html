@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+        .numbers {
+            color: black;
+            background-color: chocolate;
+            height: 50px;
+            width: 50px;
+        }
+
+        .operations {
+            color: black;
+            background-color: chartreuse;
+            height: 50px;
+            width: 50px;
+        }
+
+        #answer {
+            height: 40px;
+            width: 158px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div>
+
+        <input type="button" class="numbers" value="C" onclick="clean()">
+        <input type="text" id="answer">
+    </div>
+
+
+
+
+    <div>
+        <input type="button" class="numbers" value="7" onclick="func(this)">
+        <input type="button" class="numbers" value="8" onclick="func(this)">
+        <input type="button" class="numbers" value="9" onclick="func(this)">
+        <input type="button" class="operations" value="/" onclick="operation(this)">
+        <br>
+        <input type="button" class="numbers" value="4" onclick="func(this)">
+        <input type="button" class="numbers" value="5" onclick="func(this)">
+        <input type="button" class="numbers" value="6" onclick="func(this)">
+        <input type="button" class="operations" value="*" onclick="operation(this)">
+        <br>
+        <input type="button" class="numbers" value="1" onclick="func(this)">
+        <input type="button" class="numbers" value="2" onclick="func(this)">
+        <input type="button" class="numbers" value="3" onclick="func(this)">
+        <input type="button" class="operations" value="-" onclick="operation(this)">
+        <br>
+        <input type="button" class="numbers" value="0" onclick="func(this)">
+        <input type="button" class="operations" value="." onclick="dot()">
+        <input type="button" class="operations" value="=" onclick="answer(this)">
+        <input type="button" class="operations" value="+" onclick="operation(this)">
+        <br>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+        var res = 0;
+        var op = "";
+        var counter = 0;
+        var sum = 0;
+        var firstNum = 0;
+        var SecondNum;
+        var flagdot = false;
+        var flag = false //push on operator like  + - * /;
+
+
+        function func(number) {
+            if (flag == true) {
+
+                document.getElementById("answer").value = firstNum.toString() + op + parseInt(number.value);
+                sum += parseInt(number.value);
+                if(flagdot == false  )
+                SecondNum = parseInt(number.value);
+                if(flagdot == true  ) {
+                    SecondNum += number.value/10
+                    document.getElementById("answer").value = firstNum.toString() + op + SecondNum;
+                }
+
+                console.log(sum);
+                console.log(SecondNum);
+            }
+
+            if (flag == false && flagdot == true) {
+                firstNum += number.value/10
+                document.getElementById("answer").value = parseFloat(firstNum)
+                console.log(firstNum)
+            }
+
+            if (counter == 0) {
+                firstNum += parseInt(number.value);
+                console.log(firstNum);
+                document.getElementById("answer").value = parseInt(firstNum);
+                res += parseInt(firstNum);
+                counter++;
+
+            }
+
+        }
+
+        function clean() {
+            document.getElementById("answer").value = "";
+            firstNum = 0 // אתחול כל המשתנים מחדש
+            SecondNum = 0  // אתחול כל המשתנים מחדש
+            res = 0;
+            counter = 0;
+        }
+
+        function operation(operator) {
+            op = operator.value;
+            counter++;
+            console.log(firstNum)
+            document.getElementById("answer").value = firstNum + op; // הצגה על המסך
+            sum = parseInt(res) + op; // שמירה של השרשור בשביל שימוש עתידי
+            flag = true;
+            flagdot = false ;
+        }
+
+        function answer() {
+            document.getElementById("answer").value = sum;
+            console.log(SecondNum, firstNum);
+            switch (op) {
+                case '*':
+                    console.log(SecondNum, parseFloat(firstNum))
+                    document.getElementById("answer").value = firstNum * SecondNum
+                    break
+
+                case '+':
+                    document.getElementById("answer").value = firstNum + SecondNum
+                    break;
+
+                case '-':
+                    document.getElementById("answer").value = firstNum - SecondNum
+                    break
+
+                case '/':
+                    if (SecondNum != 0) {
+                        document.getElementById("answer").value = firstNum / SecondNum
+                    }
+                    else
+                        alert("ERROR")
+
+
+            }
+
+
+
+        }
+
+        function dot() {
+
+            flagdot = true  
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
