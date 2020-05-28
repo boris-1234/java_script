@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+        .numbers {
+            color: black;
+            background-color: chocolate;
+            height: 50px;
+            width: 50px;
+        }
+
+        .operations {
+            color: black;
+            background-color: chartreuse;
+            height: 50px;
+            width: 50px;
+        }
+
+        #answer {
+            height: 40px;
+            width: 158px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+    <input type="button" class="numbers" value="C" onclick="clean()">
+    <input disabled id="answer">
+</div>
+
+
+<div>
+    <input type="button" class="numbers" value="7" onclick="edit('7')">
+    <input type="button" class="numbers" value="8" onclick="edit('8')">
+    <input type="button" class="numbers" value="9" onclick="edit('9')">
+    <input type="button" class="operations" value="/" onclick="edit('/')">
+    <br>
+    <input type="button" class="numbers" value="4" onclick="edit('4')">
+    <input type="button" class="numbers" value="5" onclick="edit('5')">
+    <input type="button" class="numbers" value="6" onclick="edit('6')">
+    <input type="button" class="operations" value="*" onclick="edit('*')">
+    <br>
+    <input type="button" class="numbers" value="1" onclick="edit('1')">
+    <input type="button" class="numbers" value="2" onclick="edit('2')">
+    <input type="button" class="numbers" value="3" onclick="edit('3')">
+    <input type="button" class="operations" value="-" onclick="edit('-')">
+    <br>
+    <input type="button" class="numbers" value="0" onclick="edit('0')">
+    <input type="button" class="operations" value="." onclick="edit('.')">
+    <input type="button" class="operations" value="=" onclick="solve()">
+    <input type="button" class="operations" value="+" onclick="edit('+')">
+    <br>
+
+
+</div>
+<script>
+    const answer = document.getElementById("answer");
+    let isDot = false;
+
+    function edit(char) {
+        let isOk = true;
+
+        if(char == "."){
+            if(!isDot){
+                isDot = true;
+            }
+            else{
+                isOk = false;
+            }
+        }
+        if(isOk){
+            if (char.includes("/") || char.includes("+") || char.includes("-") || char.includes("*")) {
+                isDot = false;
+                if (answer.value.includes("/") || answer.value.includes("+") || answer.value.includes("-") || answer.value.includes("*")) {
+                    solve()
+                }
+            }
+            answer.value += char;
+        }
+    }
+
+    function clean() {
+        answer.value = ""
+        isDot = false;
+    }
+
+    function solve() {
+        answer.value = eval(answer.value);
+        if (answer.value.includes('.')){
+            isDot = true;
+        }
+        else{
+            isDot = false;
+        }
+    }
+</script>
+</body>
+</html>
